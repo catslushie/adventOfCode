@@ -25,7 +25,7 @@ public class Main {
         int sum = 0;
         //READING FILE IN.
         try {
-            reader = new BufferedReader(new FileReader("C:\\Users\\zaras\\Documents\\Worksheet 1\\dayone\\src\\calivalues"));
+            reader = new BufferedReader(new FileReader("C:\\Users\\zaras\\Documents\\Worksheet 1\\dayOnePartTwo\\src\\calivalues"));
             List<String> fileLines = new ArrayList<>();
             String line = reader.readLine();
 
@@ -53,10 +53,12 @@ public class Main {
                         StringBuilder wordNum = new StringBuilder();
                         while (indexOfchar < currentLine.length() && Character.isLetter(currentLine.charAt(indexOfchar))) {
                             wordNum.append(currentLine.charAt(indexOfchar));
+                            System.out.println(wordNum);
                             indexOfchar++;
                         }
                         indexOfchar--;
                         if (nums.containsKey(wordNum.toString())) {
+                            System.out.println(wordNum);
                             currentDigits.append(nums.get(wordNum.toString()));
                         }
                     }
@@ -64,7 +66,6 @@ public class Main {
                 }
                 temp.add(currentDigits.toString());
                 System.out.println(temp.get(x));
-                currentDigits = new StringBuilder();
             }
         } catch (IOException e) {
             throw new RuntimeException(e);
